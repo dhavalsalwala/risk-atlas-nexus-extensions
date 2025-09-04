@@ -1,0 +1,2 @@
+include src/ran_ares_integration/schema/*.yaml
+include src/ran_ares_integration/data/knowledge_graph/*.yaml
