@@ -1,0 +1,44 @@
+[project]
+name = "ran-ares-integration"
+version = "1.0.0"
+authors = [
+    { name = "Dhaval Salwala", email = "dhaval.vinodbhai.salwala@ibm.com" },
+    { name = "Inge Vejsbjerg", email = "ingevejs@ie.ibm.com" },
+    { name = "Elizabeth Daly", email = "elizabeth.daly@ie.ibm.com" },
+]
+keywords = [
+    "ai risks",
+    "ai safety",
+    "ai governance"
+]
+description = "Risk Atlas Nexus provides tooling to help bring together disparate resources related to governance of foundation models. "
+readme = "README.md"
+requires-python = ">=3.11, <3.12.5"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+    "jinja2",
+    "linkml",
+    "linkml_runtime",
+    "pydantic",
+    "isort",
+    "pre-commit",
+    "ares-redteamer@git+ssh://git@github.com/IBM/ares.git"
+]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+remove_redundant_aliases = true
+group_by_package = true
+combine_star = true
+lines_after_imports = 2

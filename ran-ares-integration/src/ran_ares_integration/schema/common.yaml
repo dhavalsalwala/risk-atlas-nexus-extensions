@@ -1,0 +1,51 @@
+id: https://ibm.github.io/ran-ares-integration/ontology/common
+name: common
+description:
+  A core schema
+default_curi_maps:
+  - semweb_context
+imports:
+  - linkml:types
+
+default_range: string
+
+classes:
+  Entity:
+    description:
+      A generic grouping for any identifiable entity.
+    abstract: true
+    class_uri: schema:Thing
+    slots:
+      - id
+      - name
+      - description
+      - url
+      - dateCreated
+      - dateModified
+
+slots:
+  id:
+    identifier: true
+    required: true
+    slot_uri: schema:identifier
+    description: A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.
+  name:
+    slot_uri: schema:name
+    description: A text name of this instance.
+  description:
+    slot_uri: schema:description
+    description: The description of an entity
+  url:
+    slot_uri: schema:url
+    range: uri
+    description: An optional URL associated with this instance.
+  dateCreated:
+    slot_uri: schema:dateCreated
+    range: date
+    required: false
+    description: The date on which the entity was created.
+  dateModified:
+    slot_uri: schema:dateModified
+    range: date
+    required: false
+    description: The date on which the entity was most recently modified.

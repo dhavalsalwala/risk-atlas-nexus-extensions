@@ -1,0 +1,41 @@
+id: https://ibm.github.io/ran-ares-integration/ontology/risk_to_ares
+name: ares
+version: 0.0.1
+description:
+  Vocabulary to integrate Ares workflow
+default_curi_maps:
+  - semweb_context
+imports:
+  - linkml:types
+  - common
+  - ares_config
+prefixes:
+  linkml: https://w3id.org/linkml/
+default_range: string
+
+classes:
+  RiskToARESMapping:
+    is_a: Entity
+    description: >-
+      ARES uses intents to configure red-teaming.
+    attributes:
+      risk_id:
+        description: The path to the prompts file
+        range: string
+        required: true
+      ares_config:
+        description: The path to the prompts file
+        range: ARESConfig
+        inlined: true
+        required: true
+
+  RiskToARES:
+    tree_root: true
+    description: An umbrella object that holds the ontology class instances
+    attributes:
+      mappings:
+        description: A list of ares goals
+        multivalued: true
+        range: RiskToARESMapping
+        inlined: true
+        inlined_as_list: true
