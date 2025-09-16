@@ -36,21 +36,21 @@ mappings:
             name: Generic Attack Goal
             type: ares.goals.generic_attack_goal.GenericAttackGoal
             origin: local
-            output_path: assets/attack_goals_output.json
+            output_path: results/assets/attack_goals_output.json
             goal: Behavior
           strategy:
             direct_requests:
               id: f791508e-da77-430f-b094-9817a5f25bba
               name: Direct Requests
               type: ares.strategies.direct_requests.DirectRequests
-              input_path: assets/attack_goals_output.json
-              output_path: assets/direct_requests_output.json
+              input_path: results/assets/attack_goals_output.json
+              output_path: results/assets/direct_requests_output.json
           evaluation:
             id: 0b5de0c2-c1a5-4c01-a76a-1ea4194ea7c0
             name: keyword
             type: ares.evals.keyword_eval.KeywordEval
             output_path: results/evaluation.json
-            keyword_list_or_path: assets/advbench_refusal_keywords.json
+            keyword_list_or_path: ares_assets/advbench_refusal_keywords.json
       prompts: seeds.csv
 - id: 8b4f966e-416a-49b4-b8ca-6f5b050677b6
   name: encoded_interactions_attack
@@ -89,22 +89,22 @@ mappings:
             name: Generic Attack Goal
             type: ares.goals.generic_attack_goal.GenericAttackGoal
             origin: local
-            output_path: assets/attack_goals_output.json
+            output_path: results/assets/attack_goals_output.json
             goal: Behavior
           strategy:
             probes.encoding.InjectROT13:
               id: 02ccc833-d458-48f2-a448-e0c26fc34823
               name: Inject ASCII
               type: ares_garak.strategies.encoding.EncodingStrategy
-              input_path: assets/attack_goals_output.json
-              output_path: assets/garak_InjectROT13_output.json
+              input_path: results/assets/attack_goals_output.json
+              output_path: results/assets/garak_InjectROT13_output.json
               probe: probes.encoding.InjectROT13
           evaluation:
             id: 90175a26-db76-4573-b9c1-546b00c5050d
             name: keyword
             type: ares.evals.keyword_eval.KeywordEval
             output_path: results/evaluation.json
-            keyword_list_or_path: assets/advbench_refusal_keywords.json
+            keyword_list_or_path: ares_assets/advbench_refusal_keywords.json
       prompts: seeds.csv
 - id: 87fa2277-00c0-420a-b044-5c68b3cd7acf
   name: social_hacking_attack
@@ -143,22 +143,22 @@ mappings:
             name: Generic Attack Goal
             type: ares.goals.generic_attack_goal.GenericAttackGoal
             origin: local
-            output_path: assets/attack_goals_output.json
+            output_path: results/assets/attack_goals_output.json
             goal: Behavior
           strategy:
             human_jailbreak:
               id: 9415b68c-8f41-4192-aa63-d9d5e00ace0a
               name: Human Jailbreak
               type: ares_human_jailbreak.strategies.human_jailbreak.HumanJailbreak
-              input_path: assets/attack_goals_output.json
-              output_path: assets/human_jailbreak_output.json
-              jailbreaks_path: assets/human_jailbreaks.json
+              input_path: results/assets/attack_goals_output.json
+              output_path: results/assets/human_jailbreak_output.json
+              jailbreaks_path: ares_assets/human_jailbreaks.json
           evaluation:
             id: 1132e8e7-9731-4c9b-809f-edec73d39f8f
             name: keyword
             type: ares.evals.keyword_eval.KeywordEval
             output_path: results/evaluation.json
-            keyword_list_or_path: assets/advbench_refusal_keywords.json
+            keyword_list_or_path: ares_assets/advbench_refusal_keywords.json
       prompts: seeds.csv
 - id: 3ed502b9-6fc8-4eb2-abdd-bc234895c03e
   name: specialized_tokens_attack
@@ -197,34 +197,34 @@ mappings:
             name: Generic Attack Goal
             type: ares.goals.generic_attack_goal.GenericAttackGoal
             origin: local
-            output_path: assets/attack_goals_output.json
+            output_path: results/assets/attack_goals_output.json
             goal: Behavior
           strategy:
             direct_requests:
               id: 0278ea61-a917-4701-a1c6-9b31864915be
               name: Direct Requests
               type: ares.strategies.direct_requests.DirectRequests
-              input_path: assets/attack_goals_output.json
-              output_path: assets/direct_requests_output.json
+              input_path: results/assets/attack_goals_output.json
+              output_path: results/assets/direct_requests_output.json
             human_jailbreak:
               id: a2e1edb6-ae0b-49f8-a70d-319a092652c0
               name: Human Jailbreak
               type: ares_human_jailbreak.strategies.human_jailbreak.HumanJailbreak
-              input_path: assets/attack_goals_output.json
-              output_path: assets/human_jailbreak_output.json
+              input_path: results/assets/attack_goals_output.json
+              output_path: results/assets/human_jailbreak_output.json
               jailbreaks_path: assets/human_jailbreaks.json
             probes.encoding.InjectROT13:
               id: 4b5190f0-6e54-4192-8de3-c2c96dbed83a
               name: Inject ASCII
               type: ares_garak.strategies.encoding.EncodingStrategy
-              input_path: assets/attack_goals_output.json
-              output_path: assets/garak_InjectROT13_output.json
+              input_path: results/assets/attack_goals_output.json
+              output_path: results/assets/garak_InjectROT13_output.json
               probe: probes.encoding.InjectROT13
           evaluation:
             id: 076a4cfb-fc1b-4e11-b05a-9e77bcb6ff42
             name: keyword
             type: ares.evals.keyword_eval.KeywordEval
             output_path: results/evaluation.json
-            keyword_list_or_path: assets/advbench_refusal_keywords.json
+            keyword_list_or_path: ares_assets/advbench_refusal_keywords.json
       prompts: assets/pii-seeds.csv
 

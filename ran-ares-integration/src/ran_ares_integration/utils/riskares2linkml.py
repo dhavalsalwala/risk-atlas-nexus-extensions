@@ -3,7 +3,7 @@ from uuid import uuid4
 
 from linkml_runtime.dumpers import YAMLDumper
 
-from ran_ares_integration.data import DATA_DIR
+from ran_ares_integration.assets import DATA_DIR
 from ran_ares_integration.datamodel.risk_to_ares_ontology import (
     ARESConfig,
     AresEvaluator,
@@ -72,7 +72,7 @@ direct_instructions_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "Generic Attack Goal",
                                         "type": "ares.goals.generic_attack_goal.GenericAttackGoal",
-                                        "output_path": "assets/attack_goals_output.json",
+                                        "output_path": "results/assets/attack_goals_output.json",
                                         "goal": "Behavior",
                                     }
                                 ),
@@ -82,8 +82,8 @@ direct_instructions_attack = RiskToARESMapping(
                                             "id": str(uuid4()),
                                             "name": "Direct Requests",
                                             "type": "ares.strategies.direct_requests.DirectRequests",
-                                            "input_path": "assets/attack_goals_output.json",
-                                            "output_path": "assets/direct_requests_output.json",
+                                            "input_path": "results/assets/attack_goals_output.json",
+                                            "output_path": "results/assets/direct_requests_output.json",
                                         }
                                     )
                                 },
@@ -92,7 +92,7 @@ direct_instructions_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "keyword",
                                         "type": "ares.evals.keyword_eval.KeywordEval",
-                                        "keyword_list_or_path": "assets/advbench_refusal_keywords.json",
+                                        "keyword_list_or_path": "ares_assets/advbench_refusal_keywords.json",
                                     }
                                 ),
                             )
@@ -155,7 +155,7 @@ encoded_interactions_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "Generic Attack Goal",
                                         "type": "ares.goals.generic_attack_goal.GenericAttackGoal",
-                                        "output_path": "assets/attack_goals_output.json",
+                                        "output_path": "results/assets/attack_goals_output.json",
                                         "goal": "Behavior",
                                     }
                                 ),
@@ -166,8 +166,8 @@ encoded_interactions_attack = RiskToARESMapping(
                                             "name": "Inject ASCII",
                                             "type": "ares_garak.strategies.encoding.EncodingStrategy",
                                             "probe": "probes.encoding.InjectROT13",
-                                            "input_path": "assets/attack_goals_output.json",
-                                            "output_path": "assets/garak_InjectROT13_output.json",
+                                            "input_path": "results/assets/attack_goals_output.json",
+                                            "output_path": "results/assets/garak_InjectROT13_output.json",
                                         }
                                     ),
                                 },
@@ -176,7 +176,7 @@ encoded_interactions_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "keyword",
                                         "type": "ares.evals.keyword_eval.KeywordEval",
-                                        "keyword_list_or_path": "assets/advbench_refusal_keywords.json",
+                                        "keyword_list_or_path": "ares_assets/advbench_refusal_keywords.json",
                                     }
                                 ),
                             )
@@ -239,7 +239,7 @@ social_hacking_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "Generic Attack Goal",
                                         "type": "ares.goals.generic_attack_goal.GenericAttackGoal",
-                                        "output_path": "assets/attack_goals_output.json",
+                                        "output_path": "results/assets/attack_goals_output.json",
                                         "goal": "Behavior",
                                     }
                                 ),
@@ -250,8 +250,8 @@ social_hacking_attack = RiskToARESMapping(
                                             "name": "Human Jailbreak",
                                             "type": "ares_human_jailbreak.strategies.human_jailbreak.HumanJailbreak",
                                             "jailbreaks_path": "assets/human_jailbreaks.json",
-                                            "input_path": "assets/attack_goals_output.json",
-                                            "output_path": "assets/human_jailbreak_output.json",
+                                            "input_path": "results/assets/attack_goals_output.json",
+                                            "output_path": "results/assets/human_jailbreak_output.json",
                                         }
                                     ),
                                 },
@@ -260,7 +260,7 @@ social_hacking_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "keyword",
                                         "type": "ares.evals.keyword_eval.KeywordEval",
-                                        "keyword_list_or_path": "assets/advbench_refusal_keywords.json",
+                                        "keyword_list_or_path": "ares_assets/advbench_refusal_keywords.json",
                                     }
                                 ),
                             )
@@ -323,7 +323,7 @@ specialized_tokens_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "Generic Attack Goal",
                                         "type": "ares.goals.generic_attack_goal.GenericAttackGoal",
-                                        "output_path": "assets/attack_goals_output.json",
+                                        "output_path": "results/assets/attack_goals_output.json",
                                         "goal": "Behavior",
                                     }
                                 ),
@@ -333,8 +333,8 @@ specialized_tokens_attack = RiskToARESMapping(
                                             "id": str(uuid4()),
                                             "name": "Direct Requests",
                                             "type": "ares.strategies.direct_requests.DirectRequests",
-                                            "input_path": "assets/attack_goals_output.json",
-                                            "output_path": "assets/direct_requests_output.json",
+                                            "input_path": "results/assets/attack_goals_output.json",
+                                            "output_path": "results/assets/direct_requests_output.json",
                                         }
                                     ),
                                     "human_jailbreak": ARESStrategy(
@@ -343,8 +343,8 @@ specialized_tokens_attack = RiskToARESMapping(
                                             "name": "Human Jailbreak",
                                             "type": "ares_human_jailbreak.strategies.human_jailbreak.HumanJailbreak",
                                             "jailbreaks_path": "assets/human_jailbreaks.json",
-                                            "input_path": "assets/attack_goals_output.json",
-                                            "output_path": "assets/human_jailbreak_output.json",
+                                            "input_path": "results/assets/attack_goals_output.json",
+                                            "output_path": "results/assets/human_jailbreak_output.json",
                                         }
                                     ),
                                     "probes.encoding.InjectROT13": ARESStrategy(
@@ -353,8 +353,8 @@ specialized_tokens_attack = RiskToARESMapping(
                                             "name": "Inject ASCII",
                                             "type": "ares_garak.strategies.encoding.EncodingStrategy",
                                             "probe": "probes.encoding.InjectROT13",
-                                            "input_path": "assets/attack_goals_output.json",
-                                            "output_path": "assets/garak_InjectROT13_output.json",
+                                            "input_path": "results/assets/attack_goals_output.json",
+                                            "output_path": "results/assets/garak_InjectROT13_output.json",
                                         }
                                     ),
                                 },
@@ -363,7 +363,7 @@ specialized_tokens_attack = RiskToARESMapping(
                                         "id": str(uuid4()),
                                         "name": "keyword",
                                         "type": "ares.evals.keyword_eval.KeywordEval",
-                                        "keyword_list_or_path": "assets/advbench_refusal_keywords.json",
+                                        "keyword_list_or_path": "ares_assets/advbench_refusal_keywords.json",
                                     }
                                 ),
                             )
