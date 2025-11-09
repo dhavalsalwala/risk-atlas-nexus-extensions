@@ -1,9 +1,15 @@
+"""
+This file creates a LinkML schema using the current mappings between ARES and Risk Atlas Nexus.
+The goal is to update these mappings whenever new ones become available and are approved for
+introduction into Risk Atlas Nexus.
+"""
+
 import os
 from uuid import uuid4
 
 from linkml_runtime.dumpers import YAMLDumper
 
-from ran_ares_integration.assets import DATA_DIR
+from ran_ares_integration.assets import ASSETS_DIR_PATH
 from ran_ares_integration.datamodel.risk_to_ares_ontology import (
     ARESConfig,
     AresEvaluator,
@@ -376,19 +382,9 @@ specialized_tokens_attack = RiskToARESMapping(
     }
 )
 
-d = RiskToARES(
-    mappings=[
-        direct_instructions_attack,
-        encoded_interactions_attack,
-        social_hacking_attack,
-        specialized_tokens_attack,
-    ]
-).model_json_schema(mode="serialization")
-d
-
 
 with open(
-    os.path.join(DATA_DIR, "knowledge_graph", "risk_to_ares_mappings.yaml"),
+    os.path.join(ASSETS_DIR_PATH, "knowledge_graph", "risk_to_ares_mappings.yaml"),
     "+tw",
     encoding="utf-8",
 ) as output_file:
