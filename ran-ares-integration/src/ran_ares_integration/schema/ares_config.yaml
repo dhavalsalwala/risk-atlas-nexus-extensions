@@ -15,7 +15,7 @@ default_range: string
 classes:
   ARESGoal:
     is_a: Entity
-    description: Base ARES Goal
+    description: Base ARES Goal. Specify the high-level attack intent, like provoking harmful responses on context-specific attack seeds.
     attributes:
       origin:
         description: local or remote
@@ -47,8 +47,7 @@ classes:
   ARESStrategy:
     is_a: Entity
     description: >-
-      The type of attacks or evaluation techniques.  The strategy used for red-teaming the language model and, in
-      particular, for transforming the goal prompts saved in the previous step to adversarial attack prompts.
+      Create attack payloads and run attacks for different threat models. The strategy used for red-teaming the language model and, in particular, for transforming the goal prompts saved in the previous step to adversarial attack prompts.
     attributes:
       input_path:
         description: The input path
@@ -73,8 +72,7 @@ classes:
   AresEvaluator:
     is_a: Entity
     description: >-
-      How to measure and report results. The evaluation node describes the evaluators assessing the performance of the
-      target LM under attack.
+      Assess success by analysing payloads and responses for safety, security, or robustness failures.
     attributes:
       output_path:
         description: The output path for the evaluation results
@@ -99,7 +97,7 @@ classes:
   AresIntent:
     is_a: Entity
     description: >-
-      An ARES intent
+      ARES uses intent to map and automatically run series of attacks.
     class_uri: schema:AresIntent
     attributes:
       goal:
@@ -125,7 +123,7 @@ classes:
   RedTeaming:
     is_a: Entity
     description: >-
-      ARES uses intents to configure red-teaming.
+      ARES red-teaming involves defining the selected intent and mapping out the path for input attack prompts.
     attributes:
       intent:
         description: intent name
@@ -146,7 +144,7 @@ classes:
   Connector:
     is_a: Entity
     description: >-
-      An ARES intent
+      The target large language model (LLM) for conducting the ARES red-teaming evaluation.
     attributes:
       seed:
         description: Seed to be applied to model, for example, 42.
@@ -219,7 +217,7 @@ classes:
   ARESConfig:
     is_a: Entity
     description: >-
-      ARES uses intents to configure red-teaming.
+      ARES evaluation configuration for red-teaming.
     attributes:
       target:
         description: The path to the prompts file

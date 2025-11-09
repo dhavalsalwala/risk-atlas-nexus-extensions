@@ -17,7 +17,7 @@ classes:
   RiskToARESMapping:
     is_a: Entity
     description: >-
-      ARES uses intents to configure red-teaming.
+      The Entity holding mapping information from risk Id to the ARES red teaming configuration.
     attributes:
       risk_id:
         description: The path to the prompts file
@@ -31,7 +31,7 @@ classes:
 
   RiskToARES:
     tree_root: true
-    description: An umbrella object that holds the ontology class instances
+    description: An umbrella object that holds mapping instances from Risk Atlas Nexus to ARES.
     attributes:
       mappings:
         description: A list of ares goals
