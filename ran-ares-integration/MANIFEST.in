@@ -1,3 +1,4 @@
 include src/ran_ares_integration/schema/*.yaml
-include src/ran_ares_integration/data/*.yaml
-include src/ran_ares_integration/data/knowledge_graph/*.yaml
+include src/ran_ares_integration/assets/*.yaml
+include src/ran_ares_integration/assets/*.json
+include src/ran_ares_integration/assets/knowledge_graph/*.yaml
